@@ -7,7 +7,7 @@ from src.database import DatabaseConnectionError, get_engine
 
 st.set_page_config(page_title="NovaDrive — Conexão")
 st.title("NovaDrive Dashboard")
-st.caption("Spec 01 — teste de conexão com o banco (somente leitura)")
+st.caption("Use a barra lateral para abrir o Dashboard Executivo ou a Análise Comercial.")
 
 try:
     engine = get_engine()

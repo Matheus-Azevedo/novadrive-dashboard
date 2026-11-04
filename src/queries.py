@@ -55,6 +55,21 @@ _FATURAMENTO_POR_ESTADO_SQL = """
     ORDER BY faturamento DESC
 """
 
+_FATURAMENTO_POR_CIDADE_SQL = """
+    SELECT
+        ci.cidade,
+        e.sigla,
+        SUM(v.valor_pago) AS faturamento,
+        COUNT(*) AS quantidade
+    FROM vendas v
+    JOIN concessionarias c ON c.id_concessionarias = v.id_concessionarias
+    JOIN cidades ci ON ci.id_cidades = c.id_cidades
+    JOIN estados e ON e.id_estados = ci.id_estados
+    WHERE v.data_venda BETWEEN :inicio AND :fim
+    GROUP BY ci.cidade, e.sigla
+    ORDER BY faturamento DESC
+"""
+
 _LISTAR_CONCESSIONARIAS_SQL = """
     SELECT id_concessionarias, concessionaria
     FROM concessionarias
@@ -154,6 +169,14 @@ def faturamento_por_estado_periodo(data_inicio: date, data_fim: date) -> pd.Data
     """Faturamento e quantidade por estado (join geográfico)."""
     return run_query(
         _FATURAMENTO_POR_ESTADO_SQL, _period_params(data_inicio, data_fim)
+    )
+
+
+@st.cache_data(ttl=900)
+def faturamento_por_cidade_periodo(data_inicio: date, data_fim: date) -> pd.DataFrame:
+    """Faturamento e quantidade por cidade."""
+    return run_query(
+        _FATURAMENTO_POR_CIDADE_SQL, _period_params(data_inicio, data_fim)
     )
 
 
