@@ -2,7 +2,7 @@
 
 ## Implementar uma spec
 
-> Implemente `specs/01-acesso-dados`. Antes de codar, apresente um plano curto e confirme as tabelas/colunas do diagrama que serão usadas.
+> Implemente `specs/xx`. Antes de codar, apresente um plano curto e confirme as tabelas/colunas do diagrama que serão usadas.
 
 ## Revisar uma implementação
 
