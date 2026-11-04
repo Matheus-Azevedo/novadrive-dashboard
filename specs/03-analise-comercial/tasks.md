@@ -2,12 +2,12 @@
 
 ## Tasks
 
-- [ ] Ranking de vendedores (faturamento e quantidade)
-- [ ] Ticket médio por vendedor/concessionária
-- [ ] Modelos mais vendidos no período
-- [ ] Desconto médio por vendedor/concessionária
-- [ ] Comparação entre concessionárias
-- [ ] Nota no painel: funil e pátio fora de escopo (ausência de dados)
+- [x] Ranking de vendedores (faturamento e quantidade)
+- [x] Ticket médio por vendedor/concessionária
+- [x] Modelos mais vendidos no período
+- [x] Desconto médio por vendedor/concessionária
+- [x] Comparação entre concessionárias
+- [x] Nota no painel: funil e pátio fora de escopo (ausência de dados)
 
 ## Dependências
 
